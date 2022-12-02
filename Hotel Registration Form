@@ -1,0 +1,166 @@
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Canvas;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+public class MainFrame extends JFrame {
+private JPanel contentPane;
+private JTextField textField;
+private JTextField textField_1;
+private JTextField textField_2;
+private JTextField textField_3;
+private JTextField textField_4;
+private JTextField textField_5;
+private JComboBox<String> comboBox;
+private Canvas canvas;
+private JLabel lblNewLabel;
+private JLabel lblNewLabel_1;
+private JLabel lblNewLabel_2;
+private JLabel lblNewLabel_3;
+private JLabel lblNewLabel_4;
+private JLabel lblNewLabel_5;
+private JLabel lblNewLabel_6;
+private JLabel lblNewLabel_7;
+private JLabel lblNewLabel_8;
+private JButton btnNewButton;
+private JButton btnNewButton_1;
+private JRadioButton rdbtnNewRadioButton;
+private JRadioButton rdbtnNewRadioButton_1;
+/**
+* Launch the application.
+*/
+public static void main(String[] args) {
+EventQueue.invokeLater(new Runnable() {
+public void run() {
+try {
+MainFrame frame = new MainFrame();
+frame.setVisible(true);
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+});
+}
+/**
+* Create the frame.
+*/
+public MainFrame() {
+setForeground(new Color(192, 192, 192));
+setTitle("Hotel Registration");
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setBounds(100, 100, 450, 300);
+contentPane = new JPanel();
+contentPane.setBackground(new Color(224, 224, 224));
+contentPane.setForeground(new Color(250, 235, 215));
+contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+setContentPane(contentPane);
+contentPane.setLayout(null);
+canvas = new Canvas();
+canvas.setBounds(5, 5, 424, 0);
+contentPane.add(canvas);
+lblNewLabel = new JLabel("Customer Details :");
+lblNewLabel.setBounds(15, 5, 153, 14);
+contentPane.add(lblNewLabel);
+lblNewLabel_1 = new JLabel("First Name:");
+lblNewLabel_1.setBounds(25, 21, 101, 23);
+contentPane.add(lblNewLabel_1);
+textField = new JTextField();
+textField.setBounds(129, 22, 71, 20);
+contentPane.add(textField);
+textField.setColumns(10);
+lblNewLabel_2 = new JLabel("Last Name :");
+lblNewLabel_2.setBounds(210, 25, 120, 14);
+contentPane.add(lblNewLabel_2);
+textField_1 = new JTextField();
+textField_1.setBounds(340, 22, 71, 20);
+contentPane.add(textField_1);
+textField_1.setColumns(10);
+lblNewLabel_3 = new JLabel("Date of Check In :");
+lblNewLabel_3.setBounds(23, 50, 153, 14);
+contentPane.add(lblNewLabel_3);
+textField_2 = new JTextField();
+textField_2.setBounds(168, 47, 76, 20);
+contentPane.add(textField_2);
+textField_2.setColumns(10);
+lblNewLabel_4 = new JLabel("Room No :");
+lblNewLabel_4.setBounds(25, 75, 63, 14);
+contentPane.add(lblNewLabel_4);
+textField_3 = new JTextField();
+textField_3.setBounds(93, 75, 63, 20);
+contentPane.add(textField_3);
+textField_3.setColumns(10);
+lblNewLabel_5 = new JLabel("Gender : ");
+lblNewLabel_5.setBounds(25, 109, 58, 14);
+contentPane.add(lblNewLabel_5);
+rdbtnNewRadioButton = new JRadioButton("Male");
+rdbtnNewRadioButton.setBackground(new Color(255, 255, 255));
+rdbtnNewRadioButton.setBounds(79, 105, 109, 23);
+contentPane.add(rdbtnNewRadioButton);
+rdbtnNewRadioButton_1 = new JRadioButton("Female");
+rdbtnNewRadioButton_1.setBackground(new Color(255, 255,
+255));
+rdbtnNewRadioButton_1.setBounds(210, 105, 109, 23);
+contentPane.add(rdbtnNewRadioButton_1);
+ButtonGroup group = new ButtonGroup();
+group.add(rdbtnNewRadioButton);
+group.add(rdbtnNewRadioButton_1);
+lblNewLabel_6 = new JLabel("Address :");
+lblNewLabel_6.setBounds(25, 142, 77, 14);
+contentPane.add(lblNewLabel_6);
+textField_4 = new JTextField();
+textField_4.setBounds(100, 139, 311, 35);
+contentPane.add(textField_4);
+textField_4.setColumns(10);
+lblNewLabel_7 = new JLabel(" Contact No :");
+lblNewLabel_7.setBounds(25, 185, 169, 14);
+contentPane.add(lblNewLabel_7);
+textField_5 = new JTextField();
+textField_5.setBackground(new Color(255, 255, 255));
+textField_5.setBounds(210, 185, 201, 20);
+contentPane.add(textField_5);
+textField_5.setColumns(10);
+btnNewButton = new JButton("Submit");
+btnNewButton.addActionListener(new ActionListener() {
+public void actionPerformed(java.awt.event.ActionEvent evt) {
+    System.exit(0);
+}
+});
+btnNewButton.setToolTipText("click here to submit the form");
+btnNewButton.setBackground(new Color(204, 204, 255));
+btnNewButton.setBounds(289, 227, 89, 23);
+contentPane.add(btnNewButton);
+btnNewButton_1 = new JButton("Clear");
+btnNewButton_1.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent e) {
+textField.setText("");
+textField_1.setText("");
+textField_2.setText("");
+textField_3.setText("");
+textField_4.setText("");
+textField_5.setText("");
+}
+});
+btnNewButton_1.setToolTipText("clear all details");
+btnNewButton_1.setBackground(new Color(204, 204, 255));
+btnNewButton_1.setBounds(79, 227, 89, 23);
+contentPane.add(btnNewButton_1);
+String[] Payment = {"Select","Cash","Card","Online/UPI"};
+comboBox = new JComboBox(Payment);
+comboBox.setToolTipText("Select");
+comboBox.setBackground(new Color(255, 255, 255));
+comboBox.setBounds(359, 46, 70, 22);
+contentPane.add(comboBox);
+lblNewLabel_8 = new JLabel("Payment mode :");
+lblNewLabel_8.setBounds(254, 50, 105, 14);
+contentPane.add(lblNewLabel_8);
+}
+}
